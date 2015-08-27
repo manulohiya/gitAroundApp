@@ -1,5 +1,6 @@
-angular.module('starter.services', [])
-.services('Itins', function() {
+angular.module('gitAroundApp.services', [])
+
+.service('ItinService', function() {
   // Might use a resource here that returns a JSON array
   // Some fake testing data
   var itins = [{
@@ -7,74 +8,75 @@ angular.module('starter.services', [])
     title: 'SF - Ferry - Tiburon',
     description: 'Great way to spend the day outdoors!',
     image: 'https://lostgander.files.wordpress.com/2012/05/img_1333.jpg',
-    date_created: new Date();
+    date_created: new Date(),
     itin_duration_days: 1,
     city: 'San Francisco',
-    items: [{}]
+    items: [{}],
     author: 'Katie'
   }, {
     id: 1,
     title: 'SF - Ferry - Tiburon',
     description: 'Great way to spend the day outdoors!',
     image: 'https://lostgander.files.wordpress.com/2012/05/img_1333.jpg',
-    date_created: new Date();
+    date_created: new Date(),
     itin_duration_days: 1,
     city: 'San Francisco',
-    items: [{}]
+    items: [{}],
     author: 'Manu'
   }, {
     id: 2,
     title: 'SF - Ferry - Tiburon',
     description: 'Great way to spend the day outdoors!',
     image: 'https://lostgander.files.wordpress.com/2012/05/img_1333.jpg',
-    date_created: new Date();
+    date_created: new Date(),
     itin_duration_days: 1,
     city: 'San Francisco',
-    items: [{}]
+    items: [{}],
     author: 'George'
   }, {
     id: 3,
     title: 'SF - Ferry - Tiburon',
     description: 'Great way to spend the day outdoors!',
     image: 'https://lostgander.files.wordpress.com/2012/05/img_1333.jpg',
-    date_created: new Date();
+    date_created: new Date(),
     itin_duration_days: 1,
     city: 'San Francisco',
-    items: [{}]
+    items: [{}],
     author: 'Jack'
   }, {
     id: 4,
     title: 'SF - Ferry - Tiburon',
     description: 'Great way to spend the day outdoors!',
     image: 'https://lostgander.files.wordpress.com/2012/05/img_1333.jpg',
-    date_created: new Date();
+    date_created: new Date(),
     itin_duration_days: 1,
     city: 'San Francisco',
-    items: [{}]
+    items: [{}],
     author: 'Jill'
   }, {
     id: 5,
     title: 'SF - Ferry - Tiburon',
     description: 'Great way to spend the day outdoors!',
     image: 'https://lostgander.files.wordpress.com/2012/05/img_1333.jpg',
-    date_created: new Date();
+    date_created: new Date(),
     itin_duration_days: 1,
     city: 'San Francisco',
-    items: [{}]
+    items: [{}],
     author: 'Tommy'
   }, {
     id: 6,
     title: 'SF - Ferry - Tiburon',
     description: 'Great way to spend the day outdoors!',
     image: 'https://lostgander.files.wordpress.com/2012/05/img_1333.jpg',
-    date_created: new Date();
+    date_created: new Date(),
     itin_duration_days: 1,
     city: 'San Francisco',
-    items: [{}]
+    items: [{}],
     author: 'Haley'
   }];
   return {
     all: function() {
+      console.log('services works')
       return itins;
     },
     remove: function(itin) {
@@ -87,6 +89,9 @@ angular.module('starter.services', [])
         }
       }
       return null;
+    },
+    post: function(itin){
+    itins.push(itin);
     }
   };
 });

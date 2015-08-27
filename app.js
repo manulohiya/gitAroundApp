@@ -1,4 +1,4 @@
-angular.module('gitAroundApp', ['ngRoute', 'gitAroundApp.controllers'])
+angular.module('gitAroundApp', ['ngRoute', 'gitAroundApp.controllers', 'gitAroundApp.services'])
 
 .config(['$routeProvider',
    function ($routeProvider) {
