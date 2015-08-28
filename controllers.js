@@ -42,10 +42,8 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'ui.bootstr
     
 }])
 
-.controller('MyCtrl', ['$scope', function ($scope) {
-  
-    $scope.name = 'Superhero';
-}])
+
+
 
 
 
