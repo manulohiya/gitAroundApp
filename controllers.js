@@ -6,6 +6,13 @@ angular.module('gitAroundApp.controllers', [])
     
 }])
 
+.controller('ItinshowCtrl', ['$scope', function($scope) {
+
+	console.log("Show Controller is working like a BOSS")
+    
+}])
+
+
 
 
 
