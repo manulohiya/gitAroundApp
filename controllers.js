@@ -1,5 +1,5 @@
 
-angular.module('gitAroundApp.controllers', ['gitAroundApp.services'])
+angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'ui.bootstrap'])
 
 .controller('MainCtrl', ['$scope', function($scope) {
 	console.log("Controller is working like a BOSS")
@@ -8,20 +8,20 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services'])
 
 .controller('ItinsCtrl', ['$scope', 'ItinService', function($scope, ItinService) {
    console.log('itins controller working')
-   $scope.itinAll = ItinService.all()
+   $scope.itins = ItinService.all()
 
    // $scope.itin = Itin.get({id: 1})
 
 
-   // // add a new book
+   // // add a new itinerary
    $scope.newItin = {};
 
-   // Book.save($scope.newBook, function(data) {
+   // Itin.save($scope.newItin, function(data) {
    //   console.log(data);
    // });
 
-   // // // delete a book
-   // Book.delete({id: 508});
+   // // // delete a itin
+   // Itin.delete({id: ''});
 
    // update a book
  //   var book = Book.get({ id: 513 }, function() {
@@ -42,7 +42,10 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services'])
     
 }])
 
-;
+.controller('MyCtrl', ['$scope', function ($scope) {
+  
+    $scope.name = 'Superhero';
+}])
 
 
 

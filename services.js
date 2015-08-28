@@ -1,4 +1,4 @@
-angular.module('gitAroundApp.services', [])
+angular.module('gitAroundApp.services', ['ui.bootstrap'])
 
 .service('ItinService', function() {
   // Might use a resource here that returns a JSON array
