@@ -8,7 +8,7 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services'])
 
 .controller('ItinsCtrl', ['$scope', 'ItinService', function($scope, ItinService) {
    console.log('itins controller working')
-   $scope.itinAll = ItinService.all()
+   $scope.itins = ItinService.all()
 
    // $scope.itin = Itin.get({id: 1})
 
@@ -36,7 +36,7 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services'])
 .controller('ItinshowCtrl', ['$scope', 'ItinService', function($scope, ItinService) {
 
 	console.log("Show Controller is working like a BOSS")
-    $scope.item = ItinService.get(0).items
+    $scope.items = ItinService.get(0).items
    
     console.log($scope.item)
     
