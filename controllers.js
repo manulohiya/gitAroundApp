@@ -33,9 +33,12 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services'])
 
 
 
-.controller('ItinshowCtrl', ['$scope', function($scope) {
+.controller('ItinshowCtrl', ['$scope', 'ItinService', function($scope, ItinService) {
 
 	console.log("Show Controller is working like a BOSS")
+    $scope.item = ItinService.get(0).items
+   
+    console.log($scope.item)
     
 }])
 
