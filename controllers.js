@@ -1,3 +1,4 @@
+
 angular.module('gitAroundApp.controllers', ['gitAroundApp.services'])
 
 .controller('MainCtrl', ['$scope', function($scope) {
@@ -9,7 +10,7 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services'])
    console.log('itins controller working')
    $scope.itinAll = ItinService.all()
 
-   $scope.itin = Itin.get({id: 1})
+   // $scope.itin = Itin.get({id: 1})
 
 
    // // add a new book
@@ -27,7 +28,19 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services'])
  //   book.title = "EDITING A BOOK YAY";
  //   Book.update({id: 513}, book)
 	// });
-}]);
+}])
+
+
+
+
+.controller('ItinshowCtrl', ['$scope', function($scope) {
+
+	console.log("Show Controller is working like a BOSS")
+    
+}])
+
+;
+
 
 
 
