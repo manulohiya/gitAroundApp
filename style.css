@@ -1,6 +1,15 @@
 
-/*Item Grid*/
-.item {
-margin-top: 20px;
-
+body {
+	padding-top: 50px;
 }
+
+.jumbotron {
+	height: 300px;
+}
+
+
+
+
+
+
+

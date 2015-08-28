@@ -1,28 +1,32 @@
-
-
-
-<div>
- 
- MAP GOES HERE <br>
- </div>
-
-
-
-<div class ="container">
-	<h2> Itinerary Title </h2>
-	<br>
-	<div class = "row items">
-		
-		<div ng-repeat="item in itin.items">
-			<div class="col-sm-3 col-sm-offset-1">
-				<div class = "boxlike">
-			<img ng-src="{{item.image}}" width="300" height="300" alt="" > 
-				</div>
-			</div>
-		</div>  	
-		
-	</div>
+<div class="jumbotron">
+ MAP GOES HERE
 </div>
+
+<div ng-controller="ItinshowCtrl">
+  <md-content>
+    <md-list class = "item">
+      <md-subheader class="md-no-sticky">Itinirary Heading</md-subheader>
+      <md-list-item class="md-3-line" ng-repeat="item in itin.items">
+        <img ng-src="{{item.image}}" class="md-card-image" width = 200 alt="image" />
+        <div class="md-list-item-text">
+          <h3>{{ item.name }}</h3>
+          <h4>{{ item.desc }}</h4>
+          <p>{{ item.category }}</p>
+
+        </div>
+		
+
+      </md-list-item>
+
+      
+    </md-list>
+
+  </md-content>
+   
+</div>
+
+
+
 
 
 
