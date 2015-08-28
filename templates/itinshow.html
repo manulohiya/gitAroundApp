@@ -1,17 +1,36 @@
-OMG THIS IS AWESOME! <br>
-<!-- Doesnt print on view -->
 
-{{items}}
 
-<div ng-repeat="item in items">
 
-<img ng-src="{{item.image}}" alt="">
+<div>
+ 
+ MAP GOES HERE <br>
+ </div>
+
+
+
+<div class ="container">
+	<h2> Itinerary Title </h2>
+	<br>
+	<div class = "row items">
+		
+		<div ng-repeat="item in itin.items">
+			<div class="col-sm-3 col-sm-offset-1">
+				<div class = "boxlike">
+			<img ng-src="{{item.image}}" width="300" height="300" alt="" > 
+				</div>
+			</div>
+		</div>  	
+		
+	</div>
 </div>
 
 
 
 
-</div>
+
+
+
+
 
 
 

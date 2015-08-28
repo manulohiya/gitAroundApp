@@ -33,12 +33,21 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services'])
 
 
 
-.controller('ItinshowCtrl', ['$scope', 'ItinService', function($scope, ItinService) {
-
+.controller('ItinshowCtrl', ['$scope', '$routeParams', 'ItinService', function($scope, $routeParams, ItinService) {
+   var itin_id = $routeParams.id;
+   console.log("Id: "+itin_id)
 	console.log("Show Controller is working like a BOSS")
-    $scope.items = ItinService.get(0).items
    
-    console.log($scope.item)
+ //    ItinService.get({id:itin_id}, function(response){
+ //   $scope.items = response.items
+ //    console.log($scope.items)
+ // });
+
+     
+   $scope.itin = ItinService.get(itin_id)
+    console.log($scope.itin)
+ 
+
     
 }])
 
