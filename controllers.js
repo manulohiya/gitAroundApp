@@ -10,37 +10,23 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'ui.bootstr
    console.log('itins controller working')
    $scope.itins = ItinService.all()
 
-   // $scope.itin = Itin.get({id: 1})
-
-
-   // // add a new itinerary
-   $scope.newItin = {};
-
-   // Itin.save($scope.newItin, function(data) {
-   //   console.log(data);
-   // });
-
-   // // // delete a itin
-   // Itin.delete({id: ''});
-
-   // update a book
- //   var book = Book.get({ id: 513 }, function() {
- //   book.title = "EDITING A BOOK YAY";
- //   Book.update({id: 513}, book)
-	// });
+  $scope.submit = function() {
+  $scope.itin.date_created = new Date();
+  $scope.itin.id = $scope.itins.length;
+  $scope.itins.push($scope.itin); 
+  console.log($scope.itin)
+  $scope.itin = ''
+  console.log($scope.itins)
+  }
 }])
 
-
-
-
 .controller('ItinshowCtrl', ['$scope', 'ItinService', function($scope, ItinService) {
-
 	console.log("Show Controller is working like a BOSS")
     $scope.item = ItinService.get(0).items
-   
     console.log($scope.item)
     
 }])
+
 
 
 

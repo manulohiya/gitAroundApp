@@ -75,7 +75,7 @@ angular.module('gitAroundApp.services', ['ui.bootstrap'])
     description: 'Great way to spend the day outdoors!',
     image: 'https://lostgander.files.wordpress.com/2012/05/img_1333.jpg',
     date_created: new Date(),
-    itin_duration_days: 0.25,
+    itin_duration_days: 0.5,
     city: 'San Francisco',
     items: [{}],
     author: 'Jack'

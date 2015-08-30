@@ -12,6 +12,10 @@ body {
 
 }
 
+.border {
+   border-style: solid;
+   margin: 10px;
+}
 
 
 .jumbotron {
@@ -48,4 +52,15 @@ body {
 .crop img {
   height: 200px;
   width: 200px;
+}
+
+
+.boxes {
+  border-radius: 5px;
+  box-shadow: 1px 2px 10px #888888;
+  margin: 20px;
+  padding: 10px; 
+  background-color: rgba(255, 255, 255, 0.6);
+  height: auto;
+  width: 350px; 
 }
