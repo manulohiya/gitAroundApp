@@ -1,8 +1,11 @@
 <div ng-controller="ItinshowCtrl">
 <div class="map">
-<google-map center ="{latitude: 30, longitude: -120}" zoom="12">
+$scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+<ui-gmap-google-map 
 
-</google-map>
+  center='map.center' zoom='map.zoom'>
+
+</ui-gmap-google-map>
 </div>
 
 

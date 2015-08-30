@@ -1,5 +1,5 @@
 
-angular.module('gitAroundApp', ['ngRoute', 'gitAroundApp.controllers', 'gitAroundApp.services'])
+angular.module('gitAroundApp', ['ngRoute', 'gitAroundApp.controllers', 'gitAroundApp.services','uiGmapgoogle-maps'])
 
 .config(['$routeProvider',
    function ($routeProvider) {

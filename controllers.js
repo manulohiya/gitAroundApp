@@ -1,5 +1,5 @@
 
-angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'google-maps'])
+angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'uiGmapgoogle-maps'])
 
 .controller('MainCtrl', ['$scope', function($scope) {
 	console.log("Controller is working like a BOSS")
