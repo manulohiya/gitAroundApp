@@ -1,4 +1,4 @@
-angular.module('gitAroundApp.services', [])
+angular.module('gitAroundApp.services', ['google-maps'])
 
 .service('ItinService', function() {
   // Might use a resource here that returns a JSON array
