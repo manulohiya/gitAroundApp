@@ -1,12 +1,23 @@
-<div ng-controller="ItinshowCtrl">
-<div class="map">
-$scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
-<ui-gmap-google-map 
 
+<div ng-controller="ItinshowCtrl">
+
+<div class="angular-google-map-container">
+
+<ui-gmap-google-map 
+  
   center='map.center' zoom='map.zoom'>
+<canvas ng-if="render"> 
+  <!--  <ui-gmap-marker coords='marker.coords' idkey='marker.id'>
+     </ui-gmap-marker> -->
+
+     <ui-gmap-marker data-ng-repeat = "marker in markerList" coords='marker.coords' idkey='marker.id'>
+     </ui-gmap-marker>
 
 </ui-gmap-google-map>
+</canvas>
 </div>
+
+
 
 
   <md-content>
@@ -30,7 +41,6 @@ $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
   </md-content>
    
 </div>
-
 
 
 

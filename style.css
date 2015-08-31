@@ -3,12 +3,10 @@ body {
 	padding-top: 50px;
 }
 
-.jumbotron {
-	height: 300px;
-}
 
-.map {
-	height: 400px;
+
+.angular-google-map-container { 
+	height: 500px; 
 }
 
 
