@@ -1,5 +1,7 @@
 
-angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'uiGmapgoogle-maps'])
+
+angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'uiGmapgoogle-maps', 'ui.bootstrap'])
+
 
 .controller('MainCtrl', ['$scope', function($scope) {
 	console.log("Controller is working like a BOSS")
@@ -10,25 +12,18 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'uiGmapgoog
    console.log('itins controller working')
    $scope.itins = ItinService.all()
 
-   // $scope.itin = Itin.get({id: 1})
 
+  $scope.submit = function() {
+  $scope.itin.date_created = new Date();
+  $scope.itin.id = $scope.itins.length;
+  $scope.itins.push($scope.itin); 
+  console.log($scope.itin)
+  $scope.itin = ''
+  console.log($scope.itins)
+  }
 
-   // // add a new book
-   $scope.newItin = {};
-
-   // Book.save($scope.newBook, function(data) {
-   //   console.log(data);
-   // });
-
-   // // // delete a book
-   // Book.delete({id: 508});
-
-   // update a book
- //   var book = Book.get({ id: 513 }, function() {
- //   book.title = "EDITING A BOOK YAY";
- //   Book.update({id: 513}, book)
-	// });
 }])
+
 
 
 
@@ -122,11 +117,12 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'uiGmapgoog
    }
 
 
-    
-      
-  
 
 ]);
+
+
+
+
 
 
 
