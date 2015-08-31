@@ -1,4 +1,4 @@
-angular.module('gitAroundApp.services', [])
+angular.module('gitAroundApp.services', ['ui.bootstrap'])
 
 .service('ItinService', function() {
   // Might use a resource here that returns a JSON array
@@ -55,7 +55,7 @@ angular.module('gitAroundApp.services', [])
     description: 'Great way to spend the day outdoors!',
     image: 'https://lostgander.files.wordpress.com/2012/05/img_1333.jpg',
     date_created: new Date(),
-    itin_duration_days: 1,
+    itin_duration_days: 2,
     city: 'San Francisco',
     items: [{}],
     author: 'Manu'
@@ -65,7 +65,7 @@ angular.module('gitAroundApp.services', [])
     description: 'Great way to spend the day outdoors!',
     image: 'https://lostgander.files.wordpress.com/2012/05/img_1333.jpg',
     date_created: new Date(),
-    itin_duration_days: 1,
+    itin_duration_days: 3,
     city: 'San Francisco',
     items: [{}],
     author: 'George'
@@ -75,7 +75,7 @@ angular.module('gitAroundApp.services', [])
     description: 'Great way to spend the day outdoors!',
     image: 'https://lostgander.files.wordpress.com/2012/05/img_1333.jpg',
     date_created: new Date(),
-    itin_duration_days: 1,
+    itin_duration_days: 0.5,
     city: 'San Francisco',
     items: [{}],
     author: 'Jack'
@@ -85,7 +85,7 @@ angular.module('gitAroundApp.services', [])
     description: 'Great way to spend the day outdoors!',
     image: 'https://lostgander.files.wordpress.com/2012/05/img_1333.jpg',
     date_created: new Date(),
-    itin_duration_days: 1,
+    itin_duration_days: .5,
     city: 'San Francisco',
     items: [{}],
     author: 'Jill'
@@ -101,12 +101,12 @@ angular.module('gitAroundApp.services', [])
     author: 'Tommy'
   }, {
     id: 6,
-    title: 'SF - Ferry - Tiburon',
+    title: 'Portland Food Trucks + Hike',
     description: 'Great way to spend the day outdoors!',
     image: 'https://lostgander.files.wordpress.com/2012/05/img_1333.jpg',
     date_created: new Date(),
     itin_duration_days: 1,
-    city: 'San Francisco',
+    city: 'Portland',
     items: [{}],
     author: 'Haley'
   }];
