@@ -1,5 +1,7 @@
 
-angular.module('gitAroundApp', ['ngRoute', 'gitAroundApp.controllers', 'gitAroundApp.services', 'ui.bootstrap'])
+
+angular.module('gitAroundApp', ['ngRoute', 'gitAroundApp.controllers', 'gitAroundApp.services','uiGmapgoogle-maps', 'ui.bootstrap'])
+
 
 .config(['$routeProvider',
    function ($routeProvider) {
@@ -8,7 +10,7 @@ angular.module('gitAroundApp', ['ngRoute', 'gitAroundApp.controllers', 'gitAroun
                 templateUrl: 'templates/home.html',
                 controller: 'ItinsCtrl'
             })
-            .when('/itin', {
+            .when('/itin/:id', {
                 templateUrl: 'templates/itinshow.html',
                 controller: 'ItinshowCtrl'
             })         

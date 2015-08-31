@@ -1,17 +1,58 @@
-OMG THIS IS AWESOME! <br>
-<!-- Doesnt print on view -->
 
-{{items}}
+<div ng-controller="ItinshowCtrl">
 
-<div ng-repeat="item in items">
+<div class="angular-google-map-container">
 
-<img ng-src="{{item.image}}" alt="">
+<ui-gmap-google-map 
+  
+  center='map.center' zoom='map.zoom'>
+<canvas ng-if="render"> 
+  <!--  <ui-gmap-marker coords='marker.coords' idkey='marker.id'>
+     </ui-gmap-marker> -->
+
+     <ui-gmap-marker data-ng-repeat = "marker in markerList" coords='marker.coords' idkey='marker.id'>
+     </ui-gmap-marker>
+
+</ui-gmap-google-map>
+</canvas>
 </div>
 
 
 
 
+  <md-content>
+    <md-list class = "item">
+      <md-subheader class="md-no-sticky">Itinirary Heading</md-subheader>
+      <md-list-item class="md-3-line" ng-repeat="item in itin.items">
+        <img ng-src="{{item.image}}" class="md-card-image" width = 200 alt="image" />
+        <div class="md-list-item-text">
+          <h3>{{ item.name }}</h3>
+          <h4>{{ item.desc }}</h4>
+          <p>{{ item.category }}</p>
+
+        </div>
+		
+
+      </md-list-item>
+
+      
+    </md-list>
+
+  </md-content>
+   
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
