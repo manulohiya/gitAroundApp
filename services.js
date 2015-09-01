@@ -1,5 +1,5 @@
 
-angular.module('gitAroundApp.services', ['uiGmapgoogle-maps', 'ui.bootstrap'])
+angular.module('gitAroundApp.services', ['ngMap', 'ui.bootstrap'])
 
 
 .service('ItinService', function() {
@@ -19,7 +19,7 @@ angular.module('gitAroundApp.services', ['uiGmapgoogle-maps', 'ui.bootstrap'])
       name: 'Boating in Stow Lake ',
       desc: 'After having breakfast at tartine, lets head to Golden Gate Park and do some exercise! Stow Lake is one of the biggest lake in the park. Rowboats and paddle boat can be rented at boathouse. If you feel like exploring golden gate park instead, you may also rent a bike at the opposite of rental spot. [INFO] 50 Stow Lake Dr | San Francisco, CA 94118 | (415) 752-0347 | Hours: Mo to Su from 10:00am to 04:00pm. [TIP] Parking is easy, you may either park at parking lot or around the lake. ',
       category: 'Play',
-      image: 'http://stowlakeboathouse.com/wp-content/uploads/2014/05/stowe_lake_02.jpg'
+      image: 'http://sfcitizen.com/blog/wp-content/uploads/2011/09/IMG_9843-copy.jpg'
 
       },
       {id: 1,
