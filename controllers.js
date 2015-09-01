@@ -17,9 +17,9 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'uiGmapgoog
   $scope.itin.date_created = new Date();
   $scope.itin.id = $scope.itins.length;
   $scope.itins.push($scope.itin); 
-  console.log($scope.itin)
+  // console.log($scope.itin)
   $scope.itin = ''
-  console.log($scope.itins)
+  // console.log($scope.itins)
   }
 
 }])
@@ -33,33 +33,29 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'uiGmapgoog
      
 
       var itin_id = $routeParams.id;
-      console.log("Id: "+itin_id)
-      console.log("Show Controller is working like a BOSS")
+      // console.log("Id: "+itin_id)
+      // console.log("Show Controller is working like a BOSS")
 
       $scope.itin = ItinService.get(itin_id)
-      console.log($scope.itin)
+      // console.log($scope.itin)
       $scope.items = $scope.itin.items
-      console.log($scope.items)
-      console.log("Number of items:"+$scope.items.length)
+      console.log("ID:" + $scope.items[0].id)
+      // console.log("Number of items:"+$scope.items.length)
       $scope.render = false
       
       
-      $scope.map = { center: 
-         { latitude: 37.7833, longitude: -122.4167 
-         }, 
-         zoom: 12
-      }
+      
 
-      var codeAddress = function(address, onSuccess) {
-         console.log('address is:'+ address);
+      var codeAddress = function(address, id, onSuccess) {
+         // console.log('address is:'+ address);
          geocoder = new google.maps.Geocoder();
-         console.log("Requesting geocode...");
+         // console.log("Requesting geocode...");
          geocoder.geocode({'address': address}, function(results, status) {
-            console.log("Received geocode with status" + status);
+            // console.log("Received geocode with status" + status);
             if (status == google.maps.GeocoderStatus.OK) {
                var latLng = results[0].geometry.location;
-               console.log(latLng)
-               onSuccess(latLng);
+               // console.log(latLng)
+               onSuccess(latLng, id);
                //return lat;
                // console.log("map works!")
                //  console.log(results)
@@ -72,50 +68,54 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'uiGmapgoog
          });
       };
 
+       codeAddress($scope.items[0].location, $scope.items[0].id, function(latLng, markerId){ 
+       $scope.map = 
+       {
+       center: 
+         { latitude: latLng.G, 
+          longitude: latLng.K 
+         }, 
+         zoom: 12
+       }
+       console.log($scope.map)
+     });
+      
+       
+
       // var address = 'Stow Lake Boathouse, Stow Lake Drive, San Francisco, CA, United States';
       var i = 0;
-      // while (i < 5) {
-      codeAddress($scope.items[i].location,function(latLng){
-         console.log("Lat recieved with " + latLng);
-            
-         // $scope.marker = {
-         //    id: $scope.items[i].id,
-         //    coords: 
-         //    {   
-         //       latitude: latLng.G,
-         //       longitude: latLng.K
-         //    }
-         
-         // };
-          
-      
-      $scope.markerList = [{
+      var markerId = $scope.items[i].id;
+      console.log("ID " + markerId); 
+      $scope.markers =[];
 
-         id: $scope.items[i].id,
-         coords: {   
-            latitude: latLng.G,
-            longitude: latLng.K
-         }
+     
 
-      },
-      {id: $scope.items[1].id,
-       coords: {   
-         latitude: 37.7900,longitude: -122.4167
-      }
+      while (i < $scope.items.length) {
+        console.log("Item Number " + i);
+        codeAddress($scope.items[i].location, $scope.items[i].id, function(latLng, markerId){ 
+          console.log("Lat recieved with " + latLng);
+          console.log("ID received with" + markerId);        
+          $scope.marker = {
 
-      }]
-
-
-
-      // console.log($scope.marker)
-      // console.log($scope.markerList)
-
-      $scope.render=true
+          itemid: i,
+          coords: {   
+          latitude: latLng.G,
+          longitude: latLng.K
+          }
+        }
+  
+       
+        $scope.markers.push($scope.marker)
+        console.log($scope.markers) 
+        $scope.render=true
       }); 
+   console.log("Counter: "+i);     
+   i++
 
-   
    }
+  console.log($scope.markers) 
 
+}
 
 
 ]);
