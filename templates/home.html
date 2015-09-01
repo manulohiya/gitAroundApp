@@ -1,11 +1,11 @@
 <div class="jumbotron">
-	<center>
-		<span class="gfont">
-			<h1>GitAround</h1><br>
-			<h4><em>The easiest way to find, clone, and customize travel itineries.</em></h4>
-
-		</span>
-	</center>
+  <div class="container">
+    <center>
+    <h1>Git Around<h1>
+    <h4><em>The easiest way to find, clone, and customize travel itineries.</em></h4>
+    </center>
+    <img src='back.png'>
+  </div>
 </div>
 
 <div class="container">
@@ -13,37 +13,29 @@
 
 
 
-<!-- All Itineraries -->
-
 
 		<div ng-controller="ItinsCtrl">
-			<br>
-			<div class= "col-sm-6">	
-				<center>
-				<h3>Where are you goin?</h3>
-				<label><input ng-model="search.city" Placeholder="San Francisco" class="form-control"></label>
-				</center>
-			</div>
-			<div class= "col-sm-6">	
-				<center>
-				<h3>For how many days?</h3>
-				<label><input type="checkbox" ng-model="search.itin_duration_days" ng-true-value="0.5">Half Day</label>
-				<label><input type="checkbox" ng-model="search.itin_duration_days" ng-true-value="1">1</label>
-				<label><input type="checkbox" ng-model="search.itin_duration_days" ng-true-value="2">2</label>
-				<label><input type="checkbox" ng-model="search.itin_duration_days" ng-true-value="3">3</label>
-				<label><input type="checkbox" ng-model="search.itin_duration_days" ng-true-value="4">4</label>
-				<label><input type="checkbox" ng-model="search.itin_duration_days" ng-true-value="5">5</label>
-				<label><input type="checkbox" ng-model="search.itin_duration_days" ng-true-value="6">6</label>
-				<label><input type="checkbox" ng-model="search.itin_duration_days" ng-true-value="7">7</label>
-				</center><br><br>
+      <div class="col-sm-6 col-sm-offset-3">
+        <center>
+	<!-- Search critera -->
+				<h3>Where are you going?</h3>
+				<label><input ng-model="search" Placeholder="San Francisco" class="form-control"></label> <br><br>
 			</div>	
+      <div class= "col-sm-3"> 
+  <!-- Button trigger modal -->
+        <button type="button" class="btn boxlike xbox" data-toggle="modal" data-target="#myModal">
+          New Itinerary
+        </button>
+      </div>
 			<div class="col-sm-6 col-sm-offset-3"></div>
 			<br>
+ <!-- All Itineraries -->
 				<div ng-repeat="i in itins | filter:search">
+					
 					<div class="col-sm-4 boxes ripplelink">
 						<center class="gfont">
 						
-						<h3>{{i.title}}</h3>
+						<a ng-href="./#/itin/{{i.id}}"><h3>{{i.title}}</h3></a>
 						<img class="crop" ng-src="{{i.image}}" alt="image" ><br>
 						{{i.city}},  <br>
 						{{i.itin_duration_days}} days, <br>
@@ -51,21 +43,36 @@
 						
 						</center>
 					</div>
+					
 				</div>	
-				<div class="col-sm-4 boxes ripplelink">
-					<center><h3>+ Create a new Itinerary</h3></center>
-					  <form ng-submit="submit()">
-			  			<input type="text" ng-model="itin.title" required placeholder="Title" class="form-control"/><br>
-			  			<input type="text" ng-model="itin.description" required placeholder="Description" class="form-control"/> <br>
-			  			<input type="text" ng-model="itin.city" required placeholder="City" class="form-control"/> <br>
-			  			<input type="text" ng-model="itin.itin_duration_days" required placeholder="Number of days" class="form-control"/> <br>
-			  			<input type="text" ng-model="itin.image" required placeholder="Cover image" class="form-control"/> <br>
-			  			<input type="text" ng-model="itin.author" required placeholder="Your name" class="form-control"/> <br>
-			  			<input type="submit" id="submit" value="Submit" class="btn"/>
-			  		  </form>
-				</div>
+				
 		</div>
 	</div>
 </div>
 
 
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <h4 class="modal-title" id="myModalLabel">New Itinerary</h4>
+      </div>
+      <div class="modal-body">
+		  <form ng-submit="submit()">
+  			<input type="text" ng-model="itin.title" required placeholder="Title" class="form-control"/><br>
+  			<input type="text" ng-model="itin.description" required placeholder="Description" class="form-control"/> <br>
+  			<input type="text" ng-model="itin.city" required placeholder="City" class="form-control"/> <br>
+  			<input type="text" ng-model="itin.itin_duration_days" required placeholder="Number of days" class="form-control"/> <br>
+  			<input type="file" ng-model="itin.image" required placeholder="Cover image" class="form-control"/> <br>
+  			<input type="text" ng-model="itin.author" required placeholder="Your name" class="form-control"/> <br>
+        <input type="submit" id="submit" value="Submit" class="btn" ng-click="close()"/>
+        <button type="button" data-dismiss="modal" aria-label="Close" class="xbox btn"><span aria-hidden="true">&times;</span></button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

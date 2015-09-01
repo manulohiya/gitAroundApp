@@ -1,5 +1,3 @@
-
-
 angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'uiGmapgoogle-maps', 'ui.bootstrap'])
 
 
@@ -8,7 +6,7 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'uiGmapgoog
 }])
 
 
-.controller('ItinsCtrl', ['$scope', 'ItinService', function($scope, ItinService) {
+.controller('ItinsCtrl', ['$scope', 'ItinService', '$location', '$modal', '$log', function($scope, ItinService, $location, $modal, $log) {
    console.log('itins controller working')
    $scope.itins = ItinService.all()
 
@@ -17,21 +15,14 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'uiGmapgoog
   $scope.itin.date_created = new Date();
   $scope.itin.id = $scope.itins.length;
   $scope.itins.push($scope.itin); 
-  console.log($scope.itin)
+  $('#myModal').modal('hide');   
   $scope.itin = ''
-  console.log($scope.itins)
   }
 
 }])
 
-
-
-
-
 .controller('ItinshowCtrl', ['$scope', '$routeParams', 'ItinService', function($scope, $routeParams, ItinService) {
       
-     
-
       var itin_id = $routeParams.id;
       console.log("Id: "+itin_id)
       console.log("Show Controller is working like a BOSS")
@@ -105,8 +96,6 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'uiGmapgoog
 
       }]
 
-
-
       // console.log($scope.marker)
       // console.log($scope.markerList)
 
@@ -115,9 +104,6 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'uiGmapgoog
 
    
    }
-
-
-
 ]);
 
 
