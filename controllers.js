@@ -14,13 +14,13 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'uiGmapgoog
 
 
   $scope.submit = function() {
-  $scope.itin.date_created = new Date();
-  $scope.itin.id = $scope.itins.length;
-  $scope.itins.push($scope.itin); 
-  // console.log($scope.itin)
-  $scope.itin = ''
-  // console.log($scope.itins)
-  }
+    $scope.itin.date_created = new Date();
+    $scope.itin.id = $scope.itins.length;
+    $scope.itins.push($scope.itin); 
+    // console.log($scope.itin)
+    $scope.itin = ''
+    // console.log($scope.itins)
+    }
 
 }])
 
@@ -43,7 +43,14 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'uiGmapgoog
       // console.log("Number of items:"+$scope.items.length)
       $scope.render = false
       
-      
+      $scope.map = 
+       {
+       center: 
+         { latitude: 37.7833, 
+          longitude: -122.4167 
+         }, 
+         zoom: 12
+       }
       
 
       var codeAddress = function(address, id, onSuccess) {
@@ -68,17 +75,17 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'uiGmapgoog
          });
       };
 
-       codeAddress($scope.items[0].location, $scope.items[0].id, function(latLng, markerId){ 
-       $scope.map = 
-       {
-       center: 
-         { latitude: latLng.G, 
-          longitude: latLng.K 
-         }, 
-         zoom: 12
-       }
-       console.log($scope.map)
-     });
+     //   codeAddress($scope.items[0].location, $scope.items[0].id, function(latLng, markerId){ 
+     //   $scope.map = 
+     //   {
+     //   center: 
+     //     { latitude: latLng.G, 
+     //      longitude: latLng.K 
+     //     }, 
+     //     zoom: 12
+     //   }
+     //   console.log($scope.map)
+     // });
       
        
 
