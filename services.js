@@ -1,5 +1,5 @@
 
-angular.module('gitAroundApp.services', ['uiGmapgoogle-maps', 'ui.bootstrap'])
+angular.module('gitAroundApp.services', ['ngMap', 'ui.bootstrap'])
 
 
 .service('ItinService', function() {

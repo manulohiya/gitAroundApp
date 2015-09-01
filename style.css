@@ -5,7 +5,12 @@
 
 /*ItinShow Page*/
 .angular-google-map-container { 
-	height: 500px; 
+	min-height: 500px!important; 
+}
+
+.ngmap {
+height: 60vh;
+
 }
 
 .list li {

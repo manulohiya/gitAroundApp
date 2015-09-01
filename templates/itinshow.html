@@ -3,18 +3,13 @@
 
 
 
-  <div class="angular-google-map-container">
-
-    <ui-gmap-google-map center='map.center' zoom='map.zoom'>
-      <canvas ng-if="render"> 
-
+  
+      <map class="ngmap" center= '{{map.center.location}}' zoom='{{map.zoom}}'>
 <!--  remove fit attribute if doesnt work -->
-        <ui-gmap-marker data-ng-repeat = 'marker in markers' coords='marker.coords' idkey='marker.itemid'>
-        </ui-gmap-marker>
+        <marker data ng-repeat='marker in markers' position='{{marker.coords.latitude}}, {{marker.coords.longitude}}' idkey='{{marker.itemid}}'>
+        </marker>
+      </map>
 
-    </ui-gmap-google-map>
-      </canvas>
-  </div>
 
 
 <!--Pattern HTML-->
