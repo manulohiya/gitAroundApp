@@ -10,10 +10,6 @@
 
 <div class="container">
   <div class="row">
-
-
-
-
 		<div ng-controller="ItinsCtrl">
       <div class="col-sm-6 col-sm-offset-3">
         <center>
@@ -34,23 +30,17 @@
 					
 					<div class="col-sm-4 boxes ripplelink">
 						<center class="gfont">
-						
-						<a ng-href="./#/itin/{{i.id}}"><h3>{{i.title}}</h3></a>
-						<img class="crop" ng-src="{{i.image}}" alt="image" ><br>
-						{{i.city}},  <br>
-						{{i.itin_duration_days}} days, <br>
-						{{i.items.length}} stops.<br>
-						
+  						<a ng-href="./#/itin/{{i.id}}"><h3>{{i.title}}</h3></a>
+  						<img class="crop" ng-src="{{i.image}}" alt="image" ><br>
+  						{{i.city}},  <br>
+  						{{i.itin_duration_days}} days, <br>
+  						{{i.items.length}} stops.<br>
 						</center>
 					</div>
-					
-				</div>	
-				
+				</div>					
 		</div>
 	</div>
 </div>
-
-
 
 
 <!-- Modal -->
