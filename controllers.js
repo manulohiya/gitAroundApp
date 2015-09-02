@@ -1,11 +1,10 @@
-
-angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'uiGmapgoogle-maps', 'ui.bootstrap'])
+angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'ui.bootstrap'])
 
 .controller('MainCtrl', ['$scope', function($scope) {
 	console.log("Controller is working like a BOSS")
 }])
 
-.controller('ItinsCtrl', ['$scope', 'ItinService', '$location', '$modal', '$log', function($scope, ItinService, $location, $modal, $log) {
+.controller('ItinsCtrl', ['$scope', 'ItinService', function($scope, ItinService) {
   console.log('itins controller working')
   $scope.itins = ItinService.all()
 
@@ -76,11 +75,7 @@ angular.module('gitAroundApp.controllers', ['gitAroundApp.services', 'uiGmapgoog
        console.log($scope.markers) 
     })
   })
-
-
 }
-
-
 ]);
 
 
