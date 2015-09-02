@@ -1,6 +1,6 @@
 
 
-angular.module('gitAroundApp', ['ngRoute', 'gitAroundApp.controllers', 'gitAroundApp.services','uiGmapgoogle-maps', 'ui.bootstrap'])
+angular.module('gitAroundApp', ['ngRoute', 'gitAroundApp.controllers', 'gitAroundApp.services','ngMap', 'ui.bootstrap'])
 
 
 .config(['$routeProvider',

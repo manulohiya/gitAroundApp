@@ -3,48 +3,50 @@
 
 
 
-  <div class="angular-google-map-container">
-
-    <ui-gmap-google-map 
-
-    center='map.center' zoom='map.zoom'>
-    <canvas ng-if="render"> 
-
+  
+      <map class="ngmap" center= '{{map.center.location}}' zoom='{{map.zoom}}'>
 <!--  remove fit attribute if doesnt work -->
-     <ui-gmap-marker data-ng-repeat = 'marker in markers' coords='marker.coords' idkey='marker.itemid' fit= 'true'>
-   </ui-gmap-marker>
+        <marker data ng-repeat='marker in markers' position='{{marker.coords.latitude}}, {{marker.coords.longitude}}' idkey='{{marker.itemid}}'>
+        </marker>
+      </map>
 
- </ui-gmap-google-map>
-</canvas>
-</div>
 
 
 <!--Pattern HTML-->
 
-<div class = "header">
-<h1> {{itin.title}} </h1> 
-<p> {{itin.description}} </p>
-</div>
+  <div class = "header">
+    <h1> {{itin.title}} </h1> 
+    <p> {{itin.description}} </p>
+
+  </div>
 
 
-<div id="pattern" class="pattern">
-  <ul class="list img-list" ng-repeat="item in itin.items">
-    <li>
+  <div id="pattern" class="pattern">
+    <ul class="list img-list" ng-repeat="item in itin.items">
+      <li>
 
-      <div class="li-img">
-        <img src={{item.image}} alt="Image Alt Text" /></img>
-      </div>
-      <div class="li-text">
-      <p class="li-action">{{ item.category }}</p> <br>
-      <h4 class="li-head">{{ item.name }}</h4> <br>
-        <p class="li-summary">{{ item.desc }}</p>
+        <div class="li-img">
+          <img ng-src= "{{ item.image }}" alt="Image Alt Text" />
 
-      </div>
-      
-    </li>
+        </div>
+        
+        <div class="li-text">
+          <p class="li-action">{{ item.category }}</p> <br>
+          <h4 class="li-head">{{ item.name }}</h4> <br>
+          <p class="li-summary">{{ item.desc }}</p>
+
+        </div>
+        
+      </li>
+    </ul>
 
 
   </div>
+
+</div>
+
+
+
 
 
 
